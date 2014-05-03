@@ -30,6 +30,8 @@
 
 .jobClass th.step, .jobClass td.step { display: none; }
 
+.jobClass .rate:before { content: "$"; }
+
 thead td { font-weight: bold; }
 
 .table { margin-bottom: 0; }
