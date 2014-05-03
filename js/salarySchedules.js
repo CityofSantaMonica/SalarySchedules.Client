@@ -74,14 +74,32 @@
 
     function jobClassStepViewModel(jobClassStepData) {
         var self = this;
+        
+        self.Hourly =  ko.computed(function () {
+           return self.HourlyRate() ? self.HourlyRate().toFixed(2) : "0.00";
+        });
+        
+        self.BiWeekly =  ko.computed(function () {
+           return self.BiWeeklyRate() ? self.BiWeeklyRate().toFixed(2) : "0.00";
+        });
+        
+        self.Monthly =  ko.computed(function () {
+           return self.MonthlyRate() ? self.MonthlyRate().toFixed(2) : "0.00";
+        });
+        
+        self.Annual =  ko.computed(function () {
+           return self.AnnualRate() ? self.AnnualRate().toFixed(2) : "0.00";
+        });
+        
         ko.mapping.fromJS(jobClassStepData, {}, self);
     };
     
     function loadComplete(data, callback) {
         rebind(data);
-        //applyMasonry();
+        
         if (callback)
             callback();
+            
         $target.fadeIn();
     };
 
@@ -92,20 +110,6 @@
             ko.applyBindings(viewModel);
             bound = true;
         }
-    };
-
-    var applyMasonry = function () {
-        var $jobClassesTarget = $("div.jobClasses", $target);
-
-        $jobClassesTarget.masonry("destroy");
-
-        $jobClassesTarget.prepend(
-            $("<div />").addClass("sizer")
-        );
-
-        $jobClassesTarget.masonry({
-            itemSelector: "div.jobClass"
-        });
     };
 
     var loadedData = {},
