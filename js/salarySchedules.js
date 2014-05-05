@@ -3,8 +3,7 @@
     //knockout view models
 
     function salaryScheduleViewModel() {
-        var self = this,
-            $allJobClasses = $([]);
+        var self = this;
 
         self.BargainingUnits = ko.observableArray().extend({ rateLimit: 50 });
         self.FiscalYear = ko.observable();        
@@ -44,15 +43,17 @@
         };        
        
         self.Initialize = function (data) {
-            $allJobClasses = $($.extend(true, [], data.JobClasses));
-
             self.ReportRunDate(data.ReportRunDate);
             self.FiscalYear(data.FiscalYear);
             
+			self.BargainingUnits([]);
+			
             $.each(data.BargainingUnits, function (i, e) {
                 self.BargainingUnits.push(e);
             });
 
+			self.JobClasses([]);
+			
             $.each(data.JobClasses, function (i, e) {
                 self.JobClasses.push(new jobClassViewModel(e));
             });
@@ -157,10 +158,6 @@ $(function () {
         app.loadScheduleData(filePath, function () {
             window.setTimeout(function () { $loader.hide(); }, 250);            
         });
-    });
-
-    $jobCarets.parent().on("click", function () {
-        $(this).next(".body").slideToggle();
     });
 
     $("td.code a").on("click", function () {
