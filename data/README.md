@@ -11,11 +11,15 @@ Currently, the `json` file for FY 10/11 is unavailable due to a bug (still unkno
 Each `json` file corresponds to a single fiscal year's salary schedule. A salary schedule is made up of a number of components.
    
 ###The date the schedule was generated
+
 ```javascript
 "ReportRunDate": "\/Date(1277449200000)\/"
 ```
 
 ###The fiscal year of the schedule
+
+A fiscal year is defined by its start and end dates, and a short code.
+
 ```javascript
 "FiscalYear": {
   "StartDate": "\/Date(1246431600000)\/",
@@ -26,7 +30,8 @@ Each `json` file corresponds to a single fiscal year's salary schedule. A salary
 
 ###The bargaining units represented in the schedule
 
-An individual bargaining unit is made up of its Code and Name, e.g.
+An individual bargaining unit is made up of its code and name, e.g.
+
 ```javascript
 {
   "Code": "ATA",
@@ -35,6 +40,7 @@ An individual bargaining unit is made up of its Code and Name, e.g.
 ```
 
 The salary schedule then has an array of bargaining units, e.g.
+
 ```javascript
 "BargainingUnits": [{
 	"Code": "ATA",
