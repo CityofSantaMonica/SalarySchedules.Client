@@ -11,4 +11,4 @@ This project uses the [AGPL] (http://www.gnu.org/licenses/agpl.html) Nuget packa
 This is a port of the .NET [`SalarySchedules.Web`](https://github.com/thekaveman/SalarySchedules/tree/master/SalarySchedules.Web) application into a simple HTML/JS only, github pages friendly, environment.
 The json files under `/data` were generated using the [`SalarySchedules.App`](https://github.com/thekaveman/SalarySchedules/tree/master/SalarySchedules.App) console application.
 
-See this branch in action: [http://thekaveman.github.io/SalarySchedules](http://thekaveman.github.io/SalarySchedules)
+See this branch in action on the [demo site](http://thekaveman.github.io/SalarySchedules).
