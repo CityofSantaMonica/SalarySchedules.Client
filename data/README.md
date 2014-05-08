@@ -71,4 +71,5 @@ A step has a number, and the rate broken out by hourly, biweekly, monthly, and a
 			"AnnualRate": 61980.00
 		}//possibly more, up to 5 total
 		]
+}
 ```
