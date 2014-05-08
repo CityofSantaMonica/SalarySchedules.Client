@@ -30,7 +30,7 @@ A fiscal year is defined by its start and end dates, and a short code.
 
 ###The bargaining units represented in the schedule
 
-An individual bargaining unit is made up of its code and name, e.g.
+An individual bargaining unit is made up of its code and name.
 
 ```javascript
 {
@@ -39,7 +39,7 @@ An individual bargaining unit is made up of its code and name, e.g.
 }
 ```
 
-The salary schedule then has an array of bargaining units, e.g.
+The salary schedule then has an array of bargaining units.
 
 ```javascript
 "BargainingUnits": [{
@@ -64,7 +64,7 @@ A step has a number, and the rate broken out by hourly, biweekly, monthly, and a
 }
 ```
 
-The job class then has an array of steps, along with the other properties
+The job class then has an array of steps, along with the other properties.
 
 ```javascript
 {
