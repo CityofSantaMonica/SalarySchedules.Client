@@ -84,3 +84,19 @@ The job class then has an array of steps, along with the other properties.
   }, ...]
 }
 ```
+
+The schedule then has an array of these job classes
+
+```javascript
+"JobClasses": [{
+  "Title": "Accountant-Collections",
+  "Code": "1109",
+  "Grade": "060",
+  "BargainingUnit": {
+    //see above
+  },
+  "Steps": [
+    //see above
+  ]
+}, ...]
+```
