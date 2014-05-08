@@ -18,9 +18,9 @@ Each `json` file corresponds to a single fiscal year's salary schedule. A salary
 ###The fiscal year of the schedule
 ```javascript
 "FiscalYear": {
-    "StartDate": "\/Date(1246431600000)\/",
-    "EndDate": "\/Date(1277881200000)\/",
-    "ShortSpanCode": "09/10"
+  "StartDate": "\/Date(1246431600000)\/",
+  "EndDate": "\/Date(1277881200000)\/",
+  "ShortSpanCode": "09/10"
 }
 ```
 
@@ -29,23 +29,17 @@ Each `json` file corresponds to a single fiscal year's salary schedule. A salary
 An individual bargaining unit is made up of its Code and Name, e.g.
 ```javascript
 {
-    "Code": "ATA",
-    "Name": "Administrative Team Associates"
+  "Code": "ATA",
+  "Name": "Administrative Team Associates"
 }
 ```
 
 The salary schedule then has an array of bargaining units, e.g.
 ```javascript
 "BargainingUnits": [{
-		"Code": "ATA",
-		"Name": "Administrative Team Associates"
-	},
-	{
-		"Code": "MTA",
-		"Name": "Management Team Associates"
-	},
-	//etc
-]
+	"Code": "ATA",
+  "Name": "Administrative Team Associates"
+}, ...]
 ```
 
 ###The job classes represented in the schedule
@@ -56,20 +50,31 @@ A step has a number, and the rate broken out by hourly, biweekly, monthly, and a
 
 ```javascript
 {
-		"Title": "Accountant-Collections",
-		"Code": "1109",
-		"Grade": "060",
-		"BargainingUnit": {
-			"Code": "ATA",
-			"Name": "Administrative Team Associates"
-		},
-		"Steps": [{
-			"StepNumber": 1,
-			"HourlyRate": 29.80,
-			"BiWeeklyRate": 2383.85,
-			"MonthlyRate": 5165.00,
-			"AnnualRate": 61980.00
-		}//possibly more, up to 5 total
-		]
+  "StepNumber": 1,
+  "HourlyRate": 29.80,
+  "BiWeeklyRate": 2383.85,
+  "MonthlyRate": 5165.00,
+  "AnnualRate": 61980.00
+}
+```
+
+The job class then has an array of steps, along with the other properties
+
+```javascript
+{
+  "Title": "Accountant-Collections",
+  "Code": "1109",
+  "Grade": "060",
+  "BargainingUnit": {
+    "Code": "ATA",
+    "Name": "Administrative Team Associates"
+  },
+  "Steps": [{
+    "StepNumber": 1,
+    "HourlyRate": 29.80,
+    "BiWeeklyRate": 2383.85,
+    "MonthlyRate": 5165.00,
+    "AnnualRate": 61980.00
+  }, ...]
 }
 ```
