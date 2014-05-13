@@ -151,10 +151,9 @@
 $(function () {
     var $dataContainer = $("#data"),
         $loader = $("#loader"),
-        $jobCarets = $(".jobClass h4 .caret");
         app = new SalaryScheduleApp($dataContainer);
     
-    $("#submit").on("click", function (e) {
+    $("#explore").on("click", function (e) {
         $loader.show();
         e.preventDefault();
         var filePath = $("#YearSelect").val();
@@ -162,6 +161,12 @@ $(function () {
             window.setTimeout(function () { $loader.hide(); }, 250);            
         });
     });
+	
+	$("#download").on("click", function(e) {
+		e.preventDefault();
+		var filePath = $("#YearSelect").val();
+		window.open(filePath);
+	});
 
     $("td.code a").on("click", function () {
         $(this).parent("tr").addClass("selected");
