@@ -62,7 +62,9 @@
 					
 					<h3 class="jobClasses">Job Classes</h3>
 
-					<input type="text" id="search" placeholder="Filter Job Classes" data-bind="value: TitleFilter, valueUpdate: 'input'" />
+                    <div id="dashboard">
+                        <input type="text" id="search" placeholder="Filter Job Classes" data-bind="value: TitleFilter, valueUpdate: 'input'" />
+                    </div>
 
 					<div class="jobClasses" data-bind="foreach: FilteredJobClasses">
 						<div class="jobClass">

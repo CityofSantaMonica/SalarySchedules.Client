@@ -4,11 +4,30 @@
 
 #loader { margin-left: -260px; }
 
+#explore, #download {
+    display: block;
+}
+
+#explore {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
 .jobClass { 
     border: solid 1px #efefef;
     margin-bottom: 1.5em;
     width: 100%;
 }
+
+#dashboard {
+    border: dashed 2px #428BCA;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+    #dashboard #search {
+        margin-bottom: 0;
+    }
 
 .jobClass div.description { padding-left: 8px; }
 
@@ -41,6 +60,16 @@ thead td { font-weight: bold; }
 /* minimum width to see the job step # at 14px font size */
 @media screen and (min-width: 412px) {
     .jobClass th.step, .jobClass td.step { display: table-cell; }
+}
+
+@media screen and (min-width: 768px) {
+    #explore, #download {
+        display: inline-block;
+    }
+
+    #explore {
+        margin: 0 1em;
+    }
 }
 
 @media screen and (min-width: 1024px) {
