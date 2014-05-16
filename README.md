@@ -53,7 +53,7 @@ The salary schedule then has an array of bargaining units.
 
 ```javascript
 "BargainingUnits": [{
-	"Code": "ATA",
+  "Code": "ATA",
   "Name": "Administrative Team Associates"
 }, ...]
 ```
@@ -103,7 +103,8 @@ The schedule then has an array of these job classes
   "Code": "1109",
   "Grade": "060",
   "BargainingUnit": {
-    //see above
+    "Code": "ATA",
+    "Name": "Administrative Team Associates"
   },
   "Steps": [
     //see above
