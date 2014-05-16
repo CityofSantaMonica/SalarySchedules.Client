@@ -11,13 +11,14 @@
         self.ReportRunDate = ko.observable();
         self.TitleFilter = ko.observable();
         self.BargainingUnitsFilter = ko.observable();
+        self.FilteredResultsCount = ko.observable(-1);
 
         self.FilteredJobClasses = ko.computed(function () {
             var title = self.TitleFilter() || "",
                 bu = self.BargainingUnitsFilter() || "";
 
             if (title || bu) {
-                return ko.utils.arrayFilter(self.JobClasses(), function (jc) {
+                var toKeep = ko.utils.arrayFilter(self.JobClasses(), function (jc) {
                     var keep = true;
                     
                     if (title)
@@ -28,8 +29,13 @@
 
                     return keep;
                 });
+
+                self.FilteredResultsCount(toKeep.length);
+
+                return toKeep;
             }
             else {
+                self.FilteredResultsCount(-1);
                 return self.JobClasses();
             }
         });
@@ -37,7 +43,20 @@
         self.FiscalYearLabel = ko.computed(function () {
             return self.FiscalYear() ? "FY " + self.FiscalYear().ShortSpanCode : "No Fiscal Year";
         });
-        
+       
+        self.ResultsCountMessage = ko.computed(function () {
+            var count = self.FilteredResultsCount();
+            
+            if (count == 0)
+                return "(no results)";
+            else if (count == 1)
+                return "(1 result)";
+            else if (count > 1)
+                return "(" + count + " results)";
+            else
+                return "";
+        });
+
         self.FilterByBargainingUnit = function (bu) {
             self.BargainingUnitsFilter(bu.Code || "");
         };        

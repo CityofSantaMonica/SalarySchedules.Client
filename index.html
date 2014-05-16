@@ -64,6 +64,7 @@
 
                     <div id="dashboard">
                         <input type="text" id="search" placeholder="Filter Job Classes" data-bind="value: TitleFilter, valueUpdate: 'input'" />
+                        <span id="searchCount" data-bind="text: ResultsCountMessage"></span>
                     </div>
 
 					<div class="jobClasses" data-bind="foreach: FilteredJobClasses">
