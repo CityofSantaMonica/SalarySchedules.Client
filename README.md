@@ -1,12 +1,12 @@
 #Salary Schedules
 
-The City of Santa Monica publishes [employee salary schedules] (http://www.smgov.net/Departments/HR/Employees/Employees.aspx) in PDF format each fiscal year.
+The City of Santa Monica publishes <a href="http://www.smgov.net/Departments/HR/Employees/Employees.aspx" target="blank">employee salary schedules</a> in PDF format each fiscal year.
 
 The aim of this project is to convert human-friendly PDF into machine-friendly JSON. 
 
-This project uses the [AGPL] (http://www.gnu.org/licenses/agpl.html) Nuget package [iTextSharp] (http://sourceforge.net/projects/itextsharp/) to read data as text from PDF documents.
+This project uses the <a href="http://www.gnu.org/licenses/agpl.html" target="blank">AGPL</a> Nuget package <a href="http://sourceforge.net/projects/itextsharp/" target="blank">iTextSharp</a> to read data as text from PDF documents.
 
-See this branch in action on the [demo site](http://cityofsantamonica.github.io/SalarySchedules).
+See this branch in action on the <a href="http://cityofsantamonica.github.io/SalarySchedules" target="_blank">demo site</a>.
 
 ##The Data
 
