@@ -1,4 +1,4 @@
-﻿function SalaryScheduleApp($target) {
+function SalaryScheduleApp($target) {
 
     //knockout view models
 
@@ -65,7 +65,7 @@
             self.ReportRunDate(data.ReportRunDate);
             self.FiscalYear(data.FiscalYear);
             
-			self.BargainingUnits([]);
+	        self.BargainingUnits([]);
 			
             $.each(data.BargainingUnits, function (i, e) {
                 self.BargainingUnits.push(e);
@@ -117,6 +117,8 @@
         ko.mapping.fromJS(jobClassStepData, {}, self);
     };
     
+    //helper functions
+    
     function loadComplete(data, callback) {
         rebind(data);
         
@@ -135,11 +137,13 @@
         }
     };
 
+    //"private" data
+
     var loadedData = {},
         viewModel = new salaryScheduleViewModel(),
         bound = false;
 
-    //the public interface
+    //the public API for SalaryScheduleApp
     
     this.loadScheduleData = function (filePath, callback) {
         $target.fadeOut();
@@ -166,6 +170,8 @@
         return false;
     };
 };
+
+//hooks into the page lifecycle
 
 $(function () {
     var $dataContainer = $("#data"),
