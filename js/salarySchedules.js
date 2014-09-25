@@ -5,7 +5,7 @@ function salaryScheduleViewModel() {
 
     self.BargainingUnits = ko.observableArray().extend({ rateLimit: 50 });
     self.FiscalYear = ko.observable();
-    self.JobClasses = ko.observableArray().extend({ rateLimit: 50 });
+    self.JobClasses = ko.observableArray().extend({ rateLimit: 100 });
     self.ReportRunDate = ko.observable();
     self.TitleFilter = ko.observable();
     self.BargainingUnitsFilter = ko.observable();
@@ -171,7 +171,7 @@ $(function () {
         }
         
         $(".loading").remove();
-        $container.fadeIn(300);
+        $container.show();
     };
     
 });
