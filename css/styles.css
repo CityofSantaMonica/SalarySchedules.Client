@@ -1,8 +1,14 @@
-﻿body { min-width: 350px; }
+body { min-width: 350px; }
 
-#data, #loader { display: none; }
+#data { display: none; }
 
-#loader { margin-left: -260px; }
+.loading { 
+    border: dashed 2px #428BCA;
+    padding: 1em;
+    max-width: 200px;
+    font-size: 1.5em;
+    margin-top: 0.5em;
+}
 
 #explore, #download {
     display: block;
@@ -25,9 +31,9 @@
     margin-bottom: 1em;
 }
 
-    #dashboard #search {
-        margin-bottom: 0;
-    }
+#dashboard #search {
+    margin-bottom: 0;
+}
 
 .jobClass div.description { padding-left: 8px; }
 
