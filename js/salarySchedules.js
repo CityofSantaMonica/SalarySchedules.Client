@@ -152,11 +152,11 @@ $(function () {
         }
     });
 	
-	$("#download").on("click", function(e) {
-		e.preventDefault();
-		var filePath = $("#YearSelect").val();
-		window.open(filePath);
-	});
+    $("#download").on("click", function(e) {
+        e.preventDefault();
+        var filePath = $("#YearSelect").val();
+        window.open(filePath);
+    });
 
     $("td.code a").on("click", function () {
         $(this).parent("tr").addClass("selected");
