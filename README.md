@@ -23,7 +23,7 @@ Each `json` file corresponds to a single fiscal year's salary schedule. A salary
 ####The date the schedule was generated
 
 ```javascript
-"ReportRunDate": "\/Date(1277449200000)\/"
+"ReportRunDate": "2014-10-27T00:00:00"
 ```
 
 ####The fiscal year of the schedule
@@ -32,9 +32,9 @@ A fiscal year is defined by its start and end dates, and a short code.
 
 ```javascript
 "FiscalYear": {
-  "StartDate": "\/Date(1246431600000)\/",
-  "EndDate": "\/Date(1277881200000)\/",
-  "ShortSpanCode": "09/10"
+  "StartDate": "2014-07-01T00:00:00",
+  "EndDate": "2015-06-30T11:59:59",
+  "ShortSpanCode": "14/15"
 }
 ```
 
