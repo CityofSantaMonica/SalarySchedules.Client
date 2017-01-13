@@ -1,0 +1,84 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h2>Salary Schedules</h2>
+    <div class="form form-inline">
+      <div class="form-group">
+        <label id="YearLabel">Select a fiscal year: </label>
+        <select id="YearSelect" class="form-control" ng-model="$ctrl.file">
+          <option value="data/salary-sched-14-15.json">14/15</option>
+          <option value="data/salary-sched-13-14.json">13/14</option>
+          <option value="data/salary-sched-12-13.json">12/13</option>
+          <option value="data/salary-sched-11-12.json">11/12</option>
+          <option value="data/salary-sched-09-10.json">09/10</option>
+        </select>
+      </div>
+      <button id="explore" class="btn btn-primary" ng-click="$ctrl.load()">Explore</button>
+      <button id="download" class="btn btn-primary" ng-click="$ctrl.view()">Download</button>
+    </div>
+    <br />
+    <em class="text-muted" ng-hide="$ctrl.data.ReportRunDate">Select a fiscal year to get started</em>
+  </div>
+</div>
+<div class="row" ng-show="$ctrl.data.ReportRunDate">
+  <div class="col-sm-12">
+    <h3>FY {{ $ctrl.data.FiscalYear.ShortSpanCode }}</h3>
+
+    <h4>Bargaining Units</h4>
+    <table class="table table-striped table-bordered allBargainingUnits">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="unit in $ctrl.data.BargainingUnits">
+          <td class="code">
+            <button type="button" class="btn btn-link" ng-click="$ctrl.loadJobs(unit.Code)">{{ unit.Code }}</a>
+          </td>
+          <td class="name">{{ unit.Name }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4 class="jobClasses">Job Classes</h4>
+    
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Filter Job Classes" ng-model="$ctrl.titleFilter" />
+    </div>
+
+    <div class="jobClasses" ng-repeat="job in $ctrl.jobs | filter: $ctrl.titleFilter">
+      <div class="jobClass">
+        <h5 class="title">{{ job.Title }}</h5>
+        <div class="description">
+          <span class="code">Code: {{ job.Code }}</span>
+          <span class="grade">Grade: {{ job.Grade }} </span>
+          <span class="bargainingUnit">BU: {{ job.BargainingUnit.Code }}</span>
+        </div>
+
+        <div class="steps">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th class="step">Step</th>
+                <th>Hourly</th>
+                <th>BiWeekly</th>
+                <th>Monthly</th>
+                <th>Annual</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="step" ng-repeat="step in job.Steps">
+                <td class="step">{{ step.StepNumber }}</td>
+                <td class="hourly rate">{{ step.HourlyRate | currency }}</td>
+                <td class="biweekly rate">{{ step.BiWeeklyRate | currency }}</td>
+                <td class="monthly rate">{{ step.MonthlyRate | currency }}</td>
+                <td class="annual rate">{{ step.AnnualRate | currency }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
