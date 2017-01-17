@@ -42,13 +42,13 @@
     </table>
 
     <h4 class="jobClasses">Job Classes</h4>
-    
+
     <div class="form-group">
       <input type="text" class="form-control" placeholder="Filter Job Classes" ng-model="$ctrl.titleFilter" />
     </div>
 
-    <div class="jobClasses" ng-repeat="job in $ctrl.jobs | filter: $ctrl.titleFilter">
-      <div class="jobClass">
+    <div class="jobClasses">
+      <div class="jobClass" ng-repeat="job in $ctrl.jobs | filter: $ctrl.titleFilter">
         <h5 class="title">{{ job.Title }}</h5>
         <div class="description">
           <span class="code">Code: {{ job.Code }}</span>
