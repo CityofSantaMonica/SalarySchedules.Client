@@ -14,31 +14,42 @@
     ctrl.$onInit = function () {
       ctrl.data = {};
       ctrl.file = "";
-
       ctrl.reset();
     };
 
-    ctrl.reset = function() {
-      ctrl.bu = {};
-      ctrl.jobs = [];
-      ctrl.titleFilter = "";
+    ctrl.downloadData = function () {
+      $window.open(ctrl.file);
     };
-
-    ctrl.load = function () {
+    
+    ctrl.loadData = function () {
       ctrl.reset();
-
       $http.get(ctrl.file, { cache: true }).then(function (result) {
         ctrl.data = result.data;
       });
     };
-
-    ctrl.loadJobs = function (bu) {
-      ctrl.bu = bu;
-      ctrl.jobs = $filter("filter")(ctrl.data.JobClasses, { BargainingUnit: { Code : bu.Code } });
+    
+    ctrl.loadJobs = function () {
+      ctrl.jobs = [];
+      angular.forEach(ctrl.units, function(unit) {
+        var jobs = $filter("filter")(ctrl.data.JobClasses, { BargainingUnit: { Code : unit.Code } });
+        ctrl.jobs = ctrl.jobs.concat(jobs);
+      });
     };
 
-    ctrl.view = function () {
-      $window.open(ctrl.file);
+    ctrl.reset = function () {
+      ctrl.units = [];
+      ctrl.jobs = [];
+      ctrl.titleFilter = "";
+    };
+    
+    ctrl.toggleUnit = function (unit) {
+      var i = ctrl.units.indexOf(unit);
+      if (i === -1) {
+        ctrl.units.push(unit);
+      }
+      else {
+        ctrl.units.splice(i, 1);
+      }
     };
   }
 })();
