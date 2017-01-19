@@ -5,11 +5,11 @@
       <div class="form-group">
         <label id="YearLabel">Select a fiscal year: </label>
         <select id="YearSelect" class="form-control" ng-model="$ctrl.file">
-          <option value="data/salary-sched-14-15.json">14/15</option>
-          <option value="data/salary-sched-13-14.json">13/14</option>
-          <option value="data/salary-sched-12-13.json">12/13</option>
-          <option value="data/salary-sched-11-12.json">11/12</option>
-          <option value="data/salary-sched-09-10.json">09/10</option>
+          <option value="salary-schedules/data/14-15.json">14/15</option>
+          <option value="salary-schedules/data/13-14.json">13/14</option>
+          <option value="salary-schedules/data/12-13.json">12/13</option>
+          <option value="salary-schedules/data/11-12.json">11/12</option>
+          <option value="salary-schedules/data/09-10.json">09/10</option>
         </select>
       </div>
       <button id="explore" class="btn btn-primary" ng-click="$ctrl.load()">Explore</button>
@@ -43,7 +43,11 @@
 
     <h4 class="jobClasses" id="jobClasses">Job Classes <small ng-show="$ctrl.bu.Code">({{ $ctrl.bu.Code }})</small></h4>
 
-    <div class="form-group">
+    <p class="text-muted" ng-hide="$ctrl.bu.Code">
+      <em>Select a bargaining unit to view job classes</em>
+    </p>
+
+    <div class="form-group" ng-show="$ctrl.bu.Code">
       <input type="text" class="form-control" placeholder="Filter Job Classes" ng-model="$ctrl.titleFilter" />
     </div>
 

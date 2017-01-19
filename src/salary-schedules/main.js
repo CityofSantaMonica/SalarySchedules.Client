@@ -2,10 +2,10 @@
   "use strict";
 
   angular
-    .module("salaries", [])
+    .module("salaries.schedules", [])
     .component("salarySchedules", {
       controller: ["$filter", "$http", "$window", SalariesSchedulesController],
-      templateUrl: "salary-schedules.html"
+      templateUrl: "salary-schedules/index.html"
     });
 
   function SalariesSchedulesController($filter, $http, $window) {
