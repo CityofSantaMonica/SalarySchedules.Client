@@ -1,0 +1,13 @@
+{
+  "name": "salaries",
+  "private": true,
+  "version": "1.0.0",
+  "author": "City of Santa Monica",
+  "description": "Exploring open salary data",
+  "repository": "https://github.com/CityofSantaMonica/SalarySchedules.Client",
+  "license": "MIT",
+  "homepage": "http://cityofsantamonica.github.io/SalarySchedules.Client",
+  "main": "src/app.js",
+  "dependencies": {},
+  "devDependencies": {}
+}
