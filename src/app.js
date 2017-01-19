@@ -32,8 +32,9 @@
       });
     };
 
-    ctrl.loadJobs = function (bargainingUnit) {
-      ctrl.jobs = $filter("filter")(ctrl.data.JobClasses, { BargainingUnit: { Code : bargainingUnit } });
+    ctrl.loadJobs = function (bu) {
+      ctrl.bu = bu;
+      ctrl.jobs = $filter("filter")(ctrl.data.JobClasses, { BargainingUnit: { Code : bu.Code } });
     };
 
     ctrl.view = function () {

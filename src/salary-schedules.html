@@ -34,14 +34,14 @@
       <tbody>
         <tr ng-repeat="unit in $ctrl.data.BargainingUnits">
           <td class="code">
-            <button type="button" class="btn btn-link" ng-click="$ctrl.loadJobs(unit.Code)">{{ unit.Code }}</a>
+            <a href="#jobClasses" ng-click="$ctrl.loadJobs(unit)">{{ unit.Code }}</a>
           </td>
           <td class="name">{{ unit.Name }}</td>
         </tr>
       </tbody>
     </table>
 
-    <h4 class="jobClasses">Job Classes</h4>
+    <h4 class="jobClasses" id="jobClasses">Job Classes <small ng-show="$ctrl.bu.Code">({{ $ctrl.bu.Code }})</small></h4>
 
     <div class="form-group">
       <input type="text" class="form-control" placeholder="Filter Job Classes" ng-model="$ctrl.titleFilter" />
