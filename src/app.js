@@ -14,11 +14,19 @@
     ctrl.$onInit = function () {
       ctrl.data = {};
       ctrl.file = "";
+
+      ctrl.reset();
+    };
+
+    ctrl.reset = function() {
+      ctrl.bu = {};
       ctrl.jobs = [];
       ctrl.titleFilter = "";
     };
 
     ctrl.load = function () {
+      ctrl.reset();
+
       $http.get(ctrl.file, { cache: true }).then(function (result) {
         ctrl.data = result.data;
       });
