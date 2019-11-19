@@ -13,14 +13,14 @@
         <h1>City of Santa Monica Salary Schedules</h1>
         <p>The City of Santa Monica publishes <a href="http://www.smgov.net/Departments/HR/Employees/Employees.aspx" target="_blank">employee salary schedules</a> in PDF format each fiscal year.</p>
         <p>The aim of this project is to convert human-friendly PDF into machine-friendly JSON.</p>
-        <p>This project uses the <a href="http://www.gnu.org/licenses/agpl.html" target="_blank">AGPL</a> Nuget package <a href="http://sourceforge.net/projects/itextsharp/" target="_blank">iTextSharp</a> to read data as text from PDF documents.</p>
-        <p>Check out the code in the <a href="https://github.com/CityofSantaMonica/SalarySchedules" target="_blank">GitHub repository</a>.</p>
+        <p>This project uses the <a href="http://www.gnu.org/licenses/agpl.html" target="_blank">AGPL</a> Nuget package <a href="https://github.com/itext/itextsharp" target="_blank">iTextSharp</a> to read data as text from PDF documents.</p>
+        <p>All data provided on this website is licensed under the <a href="https://opendatacommons.org/licenses/by/1.0/index.html" target="_blank">Open Data Commons Attribution License (ODC-By) v1.0</a>.</p>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-12">
         <h2>The Data</h2>
-        
+
         <label id="YearLabel">Select a fiscal year: </label>
 
         <select id="YearSelect">
@@ -100,7 +100,13 @@
         </div>
       </div>
     </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>View the source code for the <a href="https://github.com/CityofSantaMonica/SalarySchedules" target="_blank">data parser</a> and <a href="https://github.com/CityofSantaMonica/SalarySchedules.Client" target="_blank">this website</a> on GitHub.</p>
+        </div>
+    </div>
   </div>
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.js"></script>
