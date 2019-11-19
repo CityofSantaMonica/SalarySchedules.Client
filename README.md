@@ -10,7 +10,9 @@ to read data as text from PDF documents.
 
 See this branch in action on the [demo site](http://cityofsantamonica.github.io/SalarySchedules).
 
-All data provided in this repository is licensed under the [Open Data Commons Attribution License (ODC-By) v1.0](https://opendatacommons.org/licenses/by/1.0/index.html). See the [LICENSE](./LICENSE) file for the full text and details.
+All data provided in this repository is licensed under the [Open Data Commons Attribution License (ODC-By) v1.0](./ODC-By).
+
+The code in this repository is licensed under the [MIT license](./LICENSE).
 
 ## The Data
 
